@@ -87,4 +87,14 @@ let finances = [
 ['Feb-2017', 671099]
 ];
 
+let totalMonth = finances.length
+console.log (totalMonth)
+let total = 0
+let averageChange 
+let gInProfit 
+let gDecProfit
 
+for (i = 0; i < finances.length; i++) {   // looping through each row as i index
+  total += finances[i][1]; // at each row [i] i am only adding the numbers at the second coloun at index [1]
+}
+console.log(total); 
