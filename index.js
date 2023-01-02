@@ -93,8 +93,34 @@ let total = 0
 let averageChange 
 let gInProfit 
 let gDecProfit
+let totalChange = 0
+let previousProfit;
+let currentProfit;
+let change;
+let greatestIncrease = {date: '', amount: 0};
 
 for (i = 0; i < finances.length; i++) {   // looping through each row as i index
+  currentProfit = finances[i][1];
+  console.log(`current profit is ${currentProfit}`)
   total += finances[i][1]; // at each row [i] i am only adding the numbers at the second coloun at index [1]
+  if (i === 0){
+    continue;
+  } else {
+    previousProfit = finances[i-1][1];
+    console.log(`previous profit ${previousProfit}`)
+    change = currentProfit - previousProfit;
+    console.log(`change is ${change}`)
+    if (change > greatestIncrease.amount) {
+        greatestIncrease.date = finances[i][0];
+        greatestIncrease.amount = change;
+    }
+  }
+ totalChange += change; 
+ console.log(`total change ${totalChange}`)
 }
 console.log(total); 
+
+// average change 
+averageChange = totalChange / (finances.length - 1);
+console.log(Math.round(averageChange));
+console.log(greatestIncrease)
