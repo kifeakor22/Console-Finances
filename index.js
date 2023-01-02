@@ -87,17 +87,18 @@ let finances = [
 ['Feb-2017', 671099]
 ];
 
-let totalMonth = finances.length
+let totalMonth = finances.length // total number of months in ataset 
 console.log (totalMonth)
 let total = 0
-let averageChange 
-let gInProfit 
-let gDecProfit
+let averageChange
 let totalChange = 0
 let previousProfit;
 let currentProfit;
 let change;
-let greatestIncrease = {date: '', amount: 0};
+let greatestDecreaseDate;
+let greatestDecreaseAmount = 0; 
+let greatestIncreaseDate;
+let greatestIncreaseAmount = 0;
 
 for (i = 0; i < finances.length; i++) {   // looping through each row as i index
   currentProfit = finances[i][1];
@@ -110,9 +111,14 @@ for (i = 0; i < finances.length; i++) {   // looping through each row as i index
     console.log(`previous profit ${previousProfit}`)
     change = currentProfit - previousProfit;
     console.log(`change is ${change}`)
-    if (change > greatestIncrease.amount) {
-        greatestIncrease.date = finances[i][0];
-        greatestIncrease.amount = change;
+    //calculation for greatest increase of profit 
+    if (change > greatestIncreaseAmount) {
+        greatestIncreaseDate = finances[i][0];
+        greatestIncreaseAmount = change;
+    
+    }else if(change < greatestDecreaseAmount) { // calculate greatest decrease in profit
+        greatestDecreaseAmount = change;
+        greatestDecreaseDate = finances[i][0];
     }
   }
  totalChange += change; 
@@ -123,4 +129,5 @@ console.log(total);
 // average change 
 averageChange = totalChange / (finances.length - 1);
 console.log(Math.round(averageChange));
-console.log(greatestIncrease)
+console.log(`greatest increase amount ${greatestIncreaseAmount} on ${greatestIncreaseDate}`)
+console.log(`The greatest decrease in losses was ${greatestDecreaseAmount} on ${greatestDecreaseDate}.`);
