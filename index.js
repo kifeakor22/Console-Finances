@@ -135,3 +135,15 @@ Average Change: $${averageChange}
 Greatest Increase in Profits: ${greatestIncreaseDate} ($${greatestIncreaseAmount})
 Greatest Decrease in Profits: ${greatestDecreaseDate} ($${greatestDecreaseAmount})
 ----`)
+
+let userChoice = confirm("Will you like to see the result without going to the console?")
+if (userChoice){
+    alert(` \nFinancail Analysis 
+------------------------------------------------------ 
+Total Months: ${totalMonth}    
+Total: $${total}                
+Average Change: $${averageChange}
+Greatest Increase in Profits: ${greatestIncreaseDate} ($${greatestIncreaseAmount})
+Greatest Decrease in Profits: ${greatestDecreaseDate} ($${greatestDecreaseAmount})
+----`)
+}
