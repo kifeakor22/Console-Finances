@@ -122,10 +122,16 @@ for (i = 0; i < finances.length; i++) {   // looping through each row at i index
   }
  totalChange += change; 
 }
-console.log(total); // total amount
+
 
 // average change 
 averageChange = totalChange / (finances.length - 1);
-console.log(`averageChange ${Math.round(averageChange)}`);
-console.log(`greatest increase amount ${greatestIncreaseAmount} on ${greatestIncreaseDate}`)
-console.log(`The greatest decrease in losses was ${greatestDecreaseAmount} on ${greatestDecreaseDate}.`);
+
+console.log(` \nFinancail Analysis 
+------------------------------------------------------ 
+Total Months: ${totalMonth}    
+Total: $${total}                
+Average Change: $${averageChange}
+Greatest Increase in Profits: ${greatestIncreaseDate} ($${greatestIncreaseAmount})
+Greatest Decrease in Profits: ${greatestDecreaseDate} ($${greatestDecreaseAmount})
+----`)

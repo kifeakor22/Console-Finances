@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(34, 34, 32);
+    font-size:xx-large;
+}
+nav {
+    height: 50px;
+    padding: 10px;
+
+}
+
+.jumbotron {
+    text-align: center ;
+    background-color: rgba(253, 248, 248, 0.925);
+    height: 700px;
+    width: auto;
+    padding: 40px;
+}
+
+hr {
+    color: black !important;
+}
+h2:hover {
+    background-color: rgb(180, 241, 241);
+}
