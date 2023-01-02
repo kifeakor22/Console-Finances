@@ -88,7 +88,8 @@ let finances = [
 ];
 
 let totalMonth = finances.length // total number of months in ataset 
-console.log (totalMonth)
+
+// varibales declarations 
 let total = 0
 let averageChange
 let totalChange = 0
@@ -100,18 +101,16 @@ let greatestDecreaseAmount = 0;
 let greatestIncreaseDate;
 let greatestIncreaseAmount = 0;
 
-for (i = 0; i < finances.length; i++) {   // looping through each row as i index
+for (i = 0; i < finances.length; i++) {   // looping through each row at i index
   currentProfit = finances[i][1];
-  console.log(`current profit is ${currentProfit}`)
-  total += finances[i][1]; // at each row [i] i am only adding the numbers at the second coloun at index [1]
-  if (i === 0){
-    continue;
-  } else {
+  total += finances[i][1]; // at each row [i] i am only adding the numbers at the second coloun at index [1] to total that started at 0
+  if (i === 0){ // making sure to ignore an error of refrencing an index  of [i-1] when i = 0
+    continue; // if i=0 dont try i-1 because it does not exist
+  } else { // if i != 0 then try and previous profit and calculate change 
     previousProfit = finances[i-1][1];
-    console.log(`previous profit ${previousProfit}`)
     change = currentProfit - previousProfit;
-    console.log(`change is ${change}`)
-    //calculation for greatest increase of profit 
+
+    //calculation for greatest increase of profit per month
     if (change > greatestIncreaseAmount) {
         greatestIncreaseDate = finances[i][0];
         greatestIncreaseAmount = change;
@@ -122,12 +121,11 @@ for (i = 0; i < finances.length; i++) {   // looping through each row as i index
     }
   }
  totalChange += change; 
- console.log(`total change ${totalChange}`)
 }
-console.log(total); 
+console.log(total); // total amount
 
 // average change 
 averageChange = totalChange / (finances.length - 1);
-console.log(Math.round(averageChange));
+console.log(`averageChange ${Math.round(averageChange)}`);
 console.log(`greatest increase amount ${greatestIncreaseAmount} on ${greatestIncreaseDate}`)
 console.log(`The greatest decrease in losses was ${greatestDecreaseAmount} on ${greatestDecreaseDate}.`);
