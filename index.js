@@ -125,7 +125,7 @@ for (i = 0; i < finances.length; i++) {   // looping through each row at i index
 
 
 // average change 
-averageChange = totalChange / (finances.length - 1);
+averageChange =Math.round(totalChange / (finances.length - 1));
 
 console.log(` \nFinancail Analysis 
 ------------------------------------------------------ 
