@@ -6,6 +6,8 @@ This app uses JavaScript code to analyze the financial records of a company. You
 
 ## Usage
 
+you get the option for the result to be displayed as an alert or if you want to open the console to view the result when you first visit the site. 
+
 Using this app, you can:
 
     Calculate the total profit or loss for the company.
@@ -29,9 +31,15 @@ To use the app, simply open the starter/index.js file and run the code. The resu
   </tr>
   </table>
 
+## deployed site 
 
+![site](./images/consolefinance.png)
+
+![site](./images/console.png)
 
 ## Conclusion 
+
+![](./images/wireframe.png)
 
 We hope this app will be a useful tool for anyone looking to analyze the financial records of a company. Thank you for using the Financial Analysis App!
 
